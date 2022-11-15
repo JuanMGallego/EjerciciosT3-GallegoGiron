@@ -6,28 +6,43 @@ public class Ejercicio02 {
 
 	public static void main(String[] args) {
 
-		int num;
+		int numUser;
 		int count = 0;
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Introduzca un número: ");
-		num = sc.nextInt();
-		
-		for (int i=1 ; i!=num ; i++) {
-			
-			if (i%i != 0) {
+
+		System.out.print("Introduzca un número: ");
+		numUser = sc.nextInt();
+
+		if (numUser > 0) {
+
+			for (int num = 2; num <= numUser; num++) {
 				
 				count++;
+
+				for (int div = 2; div < num; div++) {
+
+					if (num % div == 0) {
+
+						count--;
+						break;
+					
+					}
+
+				}
 				
 			}
-			
+
+		} else {
+
+			System.out.println("ERROR: Ha introdudcido un número fuera de rango");
+
 		}
-		
-		System.out.println("Entre 1 y " + num + " hay " + count + " números primos");
-		
+
+		System.out.println("Entre 1 y " + numUser + " hay " + count + " números primos");
+
 		sc.close();
-		
+
 	}
 
 }
