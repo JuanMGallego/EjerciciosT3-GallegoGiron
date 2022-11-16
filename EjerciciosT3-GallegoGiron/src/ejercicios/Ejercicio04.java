@@ -7,7 +7,7 @@ public class Ejercicio04 {
 	public static void main(String[] args) {
 
 		int numA, numB;
-		int numMax = 0;
+		int numMin = 0;
 		int mcd = 0;
 
 		Scanner sc = new Scanner(System.in);
@@ -30,18 +30,9 @@ public class Ejercicio04 {
 				
 			} else {
 				
-				if (numA > numB)
-
-					numMax = numA;
-
-				else if (numA < numB)
-					
-					numMax = numB;
-
-				for (int i = numMax; numA % i != 0 || numB % i != 0; i--) {
-
-					mcd = i;
-					mcd--;
+				numMin = numA < numB ? numA : numB;
+				
+				for (mcd = numMin; numA % mcd != 0 || numB % mcd != 0; mcd--) {
 					
 				}
 				
