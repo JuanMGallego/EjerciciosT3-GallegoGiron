@@ -20,27 +20,27 @@ public class Ejercicio05 {
 
 		if (numA <= 0 || numB <= 0) {
 					
-					System.out.println("ERROR: Introduce valores enteros positivos y mayores que 0");
+			System.out.println("ERROR: Introduce valores enteros positivos y mayores que 0");
 					
-				} else {
-		
-					if (numA == numB) {
-						
-						mcm = numA;
-						
-					} else {
-						
-						numMax = numA > numB ? numA : numB;
-						
-						for (mcm = numMax; (float)((numA % mcm - numA % mcm)  * 10)!= 0 || (float)((numB % mcm - numB % mcm) *10) != 0; mcm++) {
-							
-						}
-						
-					}
-					
-					System.out.println("El mínimo común múltiplo es: " + mcm);
+		} else {
+
+			if (numA == numB) {
+				
+				mcm = numA;
+				
+			} else {
+				
+				numMax = numA > numB ? numA : numB;
+				
+				for (mcm = numMax; mcm % numA != 0 || mcm % numB != 0; mcm++) {
 					
 				}
+				
+			}
+			
+			System.out.println("El mínimo común múltiplo es: " + mcm);
+			
+		}
 		
 		sc.close();
 		
